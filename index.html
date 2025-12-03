@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUMIC - Your Future, Clarified</title>
+    <title>AUMIC - Awakening Understanding Motivating and Inspiring Consciousness</title>
     <style>
         * {
             margin: 0;
@@ -26,7 +26,6 @@
             line-height: 1.6;
         }
         
-        /* Navigation */
         nav {
             background: linear-gradient(135deg, var(--lavender) 0%, var(--dark-lavender) 100%);
             padding: 1rem 5%;
@@ -65,7 +64,13 @@
             color: var(--indigo);
         }
         
-        /* Hero Section */
+        .logo-subtitle {
+            font-size: 0.7rem;
+            font-weight: normal;
+            display: block;
+            margin-top: 0.2rem;
+        }
+        
         .hero {
             background: linear-gradient(135deg, var(--white) 0%, var(--lavender) 100%);
             padding: 5rem 5%;
@@ -104,7 +109,6 @@
             box-shadow: 0 5px 15px rgba(75, 0, 130, 0.3);
         }
         
-        /* Services Section */
         .services {
             padding: 4rem 5%;
             background: var(--white);
@@ -147,7 +151,6 @@
             color: var(--indigo);
         }
         
-        /* Assessments Section */
         .assessments {
             padding: 4rem 5%;
             background: var(--light-gray);
@@ -172,7 +175,6 @@
             box-shadow: 0 5px 15px rgba(75, 0, 130, 0.15);
         }
         
-        /* Counsellors Section */
         .counsellors {
             padding: 4rem 5%;
             background: var(--white);
@@ -204,7 +206,6 @@
             color: var(--white);
         }
         
-        /* Resources Section */
         .resources {
             padding: 4rem 5%;
             background: var(--light-gray);
@@ -246,7 +247,6 @@
             color: var(--dark-lavender);
         }
         
-        /* Testimonials */
         .testimonials {
             padding: 4rem 5%;
             background: var(--white);
@@ -272,7 +272,6 @@
             color: var(--indigo);
         }
         
-        /* Chatbot */
         .chatbot-container {
             position: fixed;
             bottom: 30px;
@@ -351,6 +350,12 @@
             padding: 1rem;
             border-radius: 15px;
             max-width: 80%;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .message.bot {
@@ -362,6 +367,42 @@
             background: var(--indigo);
             color: var(--white);
             margin-left: auto;
+        }
+        
+        .typing-indicator {
+            display: none;
+            padding: 1rem;
+            background: var(--lavender);
+            border-radius: 15px;
+            max-width: 80px;
+            margin-bottom: 1rem;
+        }
+        
+        .typing-indicator.active {
+            display: block;
+        }
+        
+        .typing-indicator span {
+            height: 10px;
+            width: 10px;
+            background: var(--indigo);
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 2px;
+            animation: typing 1.4s infinite;
+        }
+        
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
         }
         
         .chatbot-input-area {
@@ -420,7 +461,6 @@
             color: var(--indigo);
         }
         
-        /* Footer */
         footer {
             background: linear-gradient(135deg, var(--indigo) 0%, var(--dark-lavender) 100%);
             color: var(--white);
@@ -452,7 +492,6 @@
             text-decoration: none;
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -470,10 +509,12 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <ul>
-            <li class="logo">🌸 CareerBloom Pathways</li>
+            <li class="logo">
+                🌸 AUMIC
+                <span class="logo-subtitle">Awakening Understanding Motivating and Inspiring Consciousness</span>
+            </li>
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#assessments">Assessments</a></li>
@@ -484,14 +525,12 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <h1>Your Future, Clarified 🌟</h1>
         <p>Professional career counselling with AI-powered guidance and expert human support</p>
         <button class="cta-button" onclick="scrollToAssessments()">Take a Free Assessment</button>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="services">
         <h2 class="section-title">Our Services</h2>
         <div class="service-grid">
@@ -528,7 +567,6 @@
         </div>
     </section>
 
-    <!-- Assessments Section -->
     <section id="assessments" class="assessments">
         <h2 class="section-title">Career Assessments</h2>
         <div class="assessment-grid">
@@ -555,7 +593,6 @@
         </div>
     </section>
 
-    <!-- Counsellors Section -->
     <section id="counsellors" class="counsellors">
         <h2 class="section-title">Meet Our Expert Counsellors</h2>
         <div class="counsellor-grid">
@@ -586,7 +623,6 @@
         </div>
     </section>
 
-    <!-- Resources Section -->
     <section id="resources" class="resources">
         <h2 class="section-title">Resource Hub</h2>
         <div class="resource-categories">
@@ -629,16 +665,15 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section id="community" class="testimonials">
         <h2 class="section-title">Success Stories</h2>
         <div class="testimonial-grid">
             <div class="testimonial-card">
-                <p>"CareerBloom helped me transition from engineering to UX design. The assessments were spot-on, and my counsellor provided invaluable guidance throughout my journey!"</p>
+                <p>"AUMIC helped me transition from engineering to UX design. The assessments were spot-on, and my counsellor provided invaluable guidance throughout my journey!"</p>
                 <p class="testimonial-author">- Sneha M., UX Designer</p>
             </div>
             <div class="testimonial-card">
-                <p>"The AI chatbot with voice modification made me feel comfortable discussing my career anxieties anonymously. It was the perfect first step before booking a counsellor."</p>
+                <p>"The AI assistant with voice modification made me feel comfortable discussing my career anxieties anonymously. It was the perfect first step before booking a counsellor."</p>
                 <p class="testimonial-author">- Arjun P., Software Developer</p>
             </div>
             <div class="testimonial-card">
@@ -648,25 +683,30 @@
         </div>
     </section>
 
-    <!-- Chatbot -->
     <div class="chatbot-container">
         <button class="chatbot-button" onclick="toggleChat()">💬</button>
         <div class="chatbot-window" id="chatWindow">
             <div class="chatbot-header">
-                <h3>🌸 Lavender AI Assistant</h3>
+                <h3>🤖 AUMIC AI Assistant</h3>
                 <button class="close-chat" onclick="toggleChat()">×</button>
             </div>
             <div class="chatbot-messages" id="chatMessages">
                 <div class="message bot">
-                    Hello! I'm Lavender AI, your career counselling assistant. 👋<br><br>
-                    I can help you with:<br>
-                    • Career assessments<br>
+                    Hello! I'm AUMIC AI Assistant - here to help Awaken your Understanding, Motivate your journey, and Inspire your Consciousness. 👋<br><br>
+                    I can assist you with:<br>
+                    • Career guidance and exploration<br>
+                    • Assessment recommendations<br>
                     • Booking counsellor sessions<br>
-                    • Exploring career options<br>
-                    • Answering your questions<br><br>
-                    You can type or use the 🎤 voice button for voice interaction with optional voice modification for privacy!<br><br>
-                    How can I assist you today?
+                    • Answering your career questions<br>
+                    • Resource recommendations<br><br>
+                    You can type or use the 🎤 voice button!<br><br>
+                    How can I help you today?
                 </div>
+            </div>
+            <div class="typing-indicator" id="typingIndicator">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
             <div class="chatbot-input-area">
                 <button class="voice-button" id="voiceBtn" onclick="toggleVoice()">🎤</button>
@@ -676,12 +716,11 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>About Us</h3>
-                <p>CareerBloom Pathways is your trusted partner in career development, combining AI technology with expert human guidance.</p>
+                <h3>About AUMIC</h3>
+                <p>AUMIC - Awakening Understanding Motivating and Inspiring Consciousness. Your trusted partner in career development, combining AI technology with expert human guidance.</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -694,21 +733,55 @@
             </div>
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p>📧 info@careerbloom.com</p>
+                <p>📧 info@aumic.com</p>
                 <p>📞 +91-XXXX-XXXXXX</p>
-                <p>📍 Mumbai, India</p>
+                <p>📍 India</p>
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <p>🔗 LinkedIn | Twitter | Instagram | Facebook</p>
             </div>
         </div>
-        <p>&copy; 2025 CareerBloom Pathways. All rights reserved.</p>
+        <p>&copy; 2025 AUMIC. All rights reserved.</p>
     </footer>
 
     <script>
         let isVoiceActive = false;
         let recognition;
+        let conversationHistory = [];
+        
+        const careerResponses = {
+            greetings: [
+                "Hello! I'm here to help you with your career journey. What would you like to explore today?",
+                "Hi there! Ready to discover your career path? I'm here to guide you!",
+                "Welcome! Let's work together to clarify your career goals. What's on your mind?"
+            ],
+            assessment: [
+                "Great choice! We offer 4 comprehensive assessments: Personality Test, Interest Inventory, Aptitude Test, and Work Values Assessment. Which one interests you most?",
+                "Our assessments are designed to give you deep insights into your career fit. Would you like to start with the Personality Test or explore your interests first?",
+                "I recommend starting with our Personality Test - it takes 15-20 minutes and provides personalized career recommendations. Shall we begin?"
+            ],
+            counsellor: [
+                "We have amazing counsellors! Dr. Priya Sharma specializes in Engineering & Technology, Mr. Rajesh Kumar in Business & Management, and Ms. Ananya Desai in Creative Arts & Media. Which field interests you?",
+                "I can help you book a session with one of our expert counsellors. What type of career guidance are you looking for?",
+                "Our counsellors offer video, audio, and chat sessions. Would you like me to show you their profiles and availability?"
+            ],
+            career: [
+                "Career exploration is exciting! What field or industry are you interested in? I can provide information about education requirements, salary ranges, and growth prospects.",
+                "Let me help you explore career options. Are you looking for a career change, just starting out, or seeking advancement in your current field?",
+                "I can guide you through various career paths. What are your main interests or skills you'd like to use in your career?"
+            ],
+            resources: [
+                "We have extensive resources! Check out our resume templates, interview guides, webinars, and career exploration tools. What specific resource would help you most?",
+                "Our Resource Hub has everything from templates to webinars. Are you looking for help with resumes, interview prep, or career planning?",
+                "I can point you to the perfect resources. What stage of your career journey are you in right now?"
+            ],
+            default: [
+                "That's an interesting question! Could you tell me more about what you're looking for? I'm here to help with assessments, counsellor bookings, career exploration, and resources.",
+                "I want to make sure I give you the best guidance. Are you interested in taking an assessment, speaking with a counsellor, or exploring career options?",
+                "Let me help you with that. Would you like to learn about our services, take an assessment, or book a counselling session?"
+            ]
+        };
         
         function toggleChat() {
             const chatWindow = document.getElementById('chatWindow');
@@ -719,24 +792,47 @@
             document.getElementById('assessments').scrollIntoView({ behavior: 'smooth' });
         }
         
+        function detectIntent(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            if (lowerMessage.match(/hello|hi|hey|greetings|good morning|good afternoon/)) {
+                return 'greetings';
+            } else if (lowerMessage.match(/assessment|test|personality|aptitude|interest|values/)) {
+                return 'assessment';
+            } else if (lowerMessage.match(/counsellor|counselor|therapist|expert|book|session|appointment/)) {
+                return 'counsellor';
+            } else if (lowerMessage.match(/career|job|profession|work|field|industry/)) {
+                return 'career';
+            } else if (lowerMessage.match(/resource|template|guide|resume|cv|interview|webinar/)) {
+                return 'resources';
+            } else {
+                return 'default';
+            }
+        }
+        
+        function getResponse(intent) {
+            const responses = careerResponses[intent] || careerResponses.default;
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+        
         function sendMessage() {
             const input = document.getElementById('chatInput');
             const message = input.value.trim();
             
             if (message) {
                 addMessage(message, 'user');
+                conversationHistory.push({role: 'user', content: message});
                 input.value = '';
                 
+                showTypingIndicator();
+                
                 setTimeout(() => {
-                    const responses = [
-                        "That's a great question! Let me help you with that. Would you like to take a career assessment to get personalized recommendations?",
-                        "I understand your concern. Based on your interests, I'd recommend exploring our counsellor profiles. Would you like me to show you counsellors specializing in your field?",
-                        "Excellent! I can help you book a session. What type of session would you prefer - video, audio, or chat?",
-                        "I'd be happy to guide you through our career assessments. They typically take 15-20 minutes and provide detailed insights. Shall we begin?"
-                    ];
-                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-                    addMessage(randomResponse, 'bot');
-                }, 1000);
+                    hideTypingIndicator();
+                    const intent = detectIntent(message);
+                    const response = getResponse(intent);
+                    addMessage(response, 'bot');
+                    conversationHistory.push({role: 'assistant', content: response});
+                }, 1500);
             }
         }
         
@@ -744,9 +840,17 @@
             const messagesDiv = document.getElementById('chatMessages');
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${sender}`;
-            messageDiv.textContent = text;
+            messageDiv.innerHTML = text;
             messagesDiv.appendChild(messageDiv);
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+        
+        function showTypingIndicator() {
+            document.getElementById('typingIndicator').classList.add('active');
+        }
+        
+        function hideTypingIndicator() {
+            document.getElementById('typingIndicator').classList.remove('active');
         }
         
         function handleKeyPress(event) {
@@ -772,25 +876,31 @@
             if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
                 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
                 recognition = new SpeechRecognition();
-                recognition.continuous = true;
-                recognition.interimResults = true;
+                recognition.continuous = false;
+                recognition.interimResults = false;
+                recognition.lang = 'en-US';
                 
                 recognition.onresult = (event) => {
-                    const transcript = Array.from(event.results)
-                        .map(result => result[0])
-                        .map(result => result.transcript)
-                        .join('');
-                    
+                    const transcript = event.results[0][0].transcript;
                     document.getElementById('chatInput').value = transcript;
+                    sendMessage();
+                    toggleVoice();
                 };
                 
                 recognition.onerror = (event) => {
                     console.error('Speech recognition error:', event.error);
+                    addMessage("Sorry, I couldn't hear that clearly. Please try again or type your message.", 'bot');
                     toggleVoice();
                 };
                 
+                recognition.onend = () => {
+                    if (isVoiceActive) {
+                        toggleVoice();
+                    }
+                };
+                
                 recognition.start();
-                addMessage("🎤 Voice recognition active. Speak now... (Voice modification enabled for privacy)", 'bot');
+                addMessage("🎤 Listening... Speak now!", 'bot');
             } else {
                 addMessage("Sorry, voice recognition is not supported in your browser. Please type your message instead.", 'bot');
                 toggleVoice();
@@ -800,7 +910,6 @@
         function stopVoiceRecognition() {
             if (recognition) {
                 recognition.stop();
-                addMessage("Voice recognition stopped. You can type or click the microphone again to continue.", 'bot');
             }
         }
         
