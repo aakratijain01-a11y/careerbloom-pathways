@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerBloom Pathways - Your Future, Clarified</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --lavender: #E6E6FA;
+            --indigo: #4B0082;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-lavender: #D8BFD8;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--white);
+            color: var(--indigo);
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, var(--lavender) 0%, var(--dark-lavender) 100%);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(75, 0, 130, 0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0.5rem 1rem;
+        }
+        
+        nav ul li a {
+            color: var(--indigo);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--white);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--indigo);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--white) 0%, var(--lavender) 100%);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--indigo);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--indigo);
+        }
+        
+        .cta-button {
+            background: var(--indigo);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            background: var(--dark-lavender);
+            color: var(--indigo);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(75, 0, 130, 0.3);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 4rem 5%;
+            background: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--indigo);
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: var(--lavender);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(75, 0, 130, 0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(75, 0, 130, 0.2);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--indigo);
+        }
+        
+        /* Assessments Section */
+        .assessments {
+            padding: 4rem 5%;
+            background: var(--light-gray);
+        }
+        
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .assessment-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-left: 5px solid var(--lavender);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .assessment-item:hover {
+            border-left-color: var(--indigo);
+            box-shadow: 0 5px 15px rgba(75, 0, 130, 0.15);
+        }
+        
+        /* Counsellors Section */
+        .counsellors {
+            padding: 4rem 5%;
+            background: var(--white);
+        }
+        
+        .counsellor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .counsellor-card {
+            background: var(--lavender);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .counsellor-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--indigo);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+        }
+        
+        /* Resources Section */
+        .resources {
+            padding: 4rem 5%;
+            background: var(--light-gray);
+        }
+        
+        .resource-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .resource-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            border-top: 5px solid var(--lavender);
+        }
+        
+        .resource-category h3 {
+            margin-bottom: 1rem;
+            color: var(--indigo);
+        }
+        
+        .resource-category ul {
+            list-style: none;
+        }
+        
+        .resource-category ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--lavender);
+        }
+        
+        .resource-category ul li a {
+            color: var(--indigo);
+            text-decoration: none;
+        }
+        
+        .resource-category ul li a:hover {
+            color: var(--dark-lavender);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 5%;
+            background: var(--white);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: var(--lavender);
+            padding: 2rem;
+            border-radius: 15px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            margin-top: 1rem;
+            font-weight: bold;
+            font-style: normal;
+            color: var(--indigo);
+        }
+        
+        /* Chatbot */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .chatbot-button {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender) 0%, var(--indigo) 100%);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(75, 0, 130, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            transition: transform 0.3s;
+        }
+        
+        .chatbot-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .chatbot-window {
+            display: none;
+            position: fixed;
+            bottom: 120px;
+            right: 30px;
+            width: 400px;
+            height: 600px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(75, 0, 130, 0.3);
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .chatbot-window.active {
+            display: flex;
+        }
+        
+        .chatbot-header {
+            background: linear-gradient(135deg, var(--lavender) 0%, var(--indigo) 100%);
+            padding: 1.5rem;
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chatbot-header h3 {
+            margin: 0;
+        }
+        
+        .close-chat {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .chatbot-messages {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            background: var(--light-gray);
+        }
+        
+        .message {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 15px;
+            max-width: 80%;
+        }
+        
+        .message.bot {
+            background: var(--lavender);
+            margin-right: auto;
+        }
+        
+        .message.user {
+            background: var(--indigo);
+            color: var(--white);
+            margin-left: auto;
+        }
+        
+        .chatbot-input-area {
+            padding: 1rem;
+            background: var(--white);
+            border-top: 1px solid var(--lavender);
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .chatbot-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid var(--lavender);
+            border-radius: 25px;
+            outline: none;
+        }
+        
+        .voice-button {
+            background: var(--lavender);
+            border: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        
+        .voice-button:hover {
+            background: var(--dark-lavender);
+        }
+        
+        .voice-button.active {
+            background: var(--indigo);
+            color: var(--white);
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .send-button {
+            background: var(--indigo);
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .send-button:hover {
+            background: var(--dark-lavender);
+            color: var(--indigo);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--indigo) 0%, var(--dark-lavender) 100%);
+            color: var(--white);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin: 0.5rem 0;
+        }
+        
+        .footer-section ul li a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .chatbot-window {
+                width: 90%;
+                right: 5%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li class="logo">🌸 CareerBloom Pathways</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#assessments">Assessments</a></li>
+            <li><a href="#counsellors">Counsellors</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Your Future, Clarified 🌟</h1>
+        <p>Professional career counselling with AI-powered guidance and expert human support</p>
+        <button class="cta-button" onclick="scrollToAssessments()">Take a Free Assessment</button>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Career Assessment</h3>
+                <p>Comprehensive personality, interest, and aptitude tests to discover your ideal career path</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👥</div>
+                <h3>One-on-One Counselling</h3>
+                <p>Personalized sessions with certified career counsellors via video, audio, or chat</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3>AI Career Assistant</h3>
+                <p>24/7 AI-powered guidance with voice modification for comfortable, anonymous support</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📚</div>
+                <h3>Resource Library</h3>
+                <p>Access templates, guides, webinars, and career exploration tools</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤝</div>
+                <h3>Mentorship Program</h3>
+                <p>Connect with experienced professionals in your field of interest</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>Job Search Support</h3>
+                <p>Resume building, interview prep, and job search strategies</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessments Section -->
+    <section id="assessments" class="assessments">
+        <h2 class="section-title">Career Assessments</h2>
+        <div class="assessment-grid">
+            <div class="assessment-item">
+                <h3>🧠 Personality Test</h3>
+                <p>Discover your personality type and how it aligns with different careers</p>
+                <button class="cta-button" style="margin-top: 1rem; padding: 0.5rem 1.5rem;">Start Test</button>
+            </div>
+            <div class="assessment-item">
+                <h3>❤️ Interest Inventory</h3>
+                <p>Holland Code (RIASEC) assessment to identify your career interests</p>
+                <button class="cta-button" style="margin-top: 1rem; padding: 0.5rem 1.5rem;">Start Test</button>
+            </div>
+            <div class="assessment-item">
+                <h3>⚡ Aptitude Test</h3>
+                <p>Evaluate your natural abilities and strengths across various domains</p>
+                <button class="cta-button" style="margin-top: 1rem; padding: 0.5rem 1.5rem;">Start Test</button>
+            </div>
+            <div class="assessment-item">
+                <h3>💎 Work Values Assessment</h3>
+                <p>Identify what matters most to you in your career and workplace</p>
+                <button class="cta-button" style="margin-top: 1rem; padding: 0.5rem 1.5rem;">Start Test</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counsellors Section -->
+    <section id="counsellors" class="counsellors">
+        <h2 class="section-title">Meet Our Expert Counsellors</h2>
+        <div class="counsellor-grid">
+            <div class="counsellor-card">
+                <div class="counsellor-img">👩‍💼</div>
+                <h3>Dr. Priya Sharma</h3>
+                <p><strong>Specialization:</strong> Engineering & Technology Careers</p>
+                <p>15+ years experience | PhD in Career Psychology</p>
+                <p>⭐⭐⭐⭐⭐ (4.9/5 - 250 reviews)</p>
+                <button class="cta-button" style="margin-top: 1rem; padding: 0.5rem 1.5rem;">Book Session</button>
+            </div>
+            <div class="counsellor-card">
+                <div class="counsellor-img">👨‍💼</div>
+                <h3>Mr. Rajesh Kumar</h3>
+                <p><strong>Specialization:</strong> Business & Management</p>
+                <p>12+ years experience | MBA, Certified Career Coach</p>
+                <p>⭐⭐⭐⭐⭐ (4.8/5 - 180 reviews)</p>
+                <button class="cta-button" style="margin-top: 1rem; padding: 0.5rem 1.5rem;">Book Session</button>
+            </div>
+            <div class="counsellor-card">
+                <div class="counsellor-img">👩‍🎓</div>
+                <h3>Ms. Ananya Desai</h3>
+                <p><strong>Specialization:</strong> Creative Arts & Media</p>
+                <p>10+ years experience | MA in Counselling Psychology</p>
+                <p>⭐⭐⭐⭐⭐ (4.9/5 - 200 reviews)</p>
+                <button class="cta-button" style="margin-top: 1rem; padding: 0.5rem 1.5rem;">Book Session</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources">
+        <h2 class="section-title">Resource Hub</h2>
+        <div class="resource-categories">
+            <div class="resource-category">
+                <h3>📝 Templates & Tools</h3>
+                <ul>
+                    <li><a href="#">Resume Templates</a></li>
+                    <li><a href="#">Cover Letter Samples</a></li>
+                    <li><a href="#">LinkedIn Profile Guide</a></li>
+                    <li><a href="#">Career Planning Worksheet</a></li>
+                </ul>
+            </div>
+            <div class="resource-category">
+                <h3>📖 Articles & Guides</h3>
+                <ul>
+                    <li><a href="#">How to Choose a Career Path</a></li>
+                    <li><a href="#">Interview Preparation Guide</a></li>
+                    <li><a href="#">Salary Negotiation Tips</a></li>
+                    <li><a href="#">Work-Life Balance Strategies</a></li>
+                </ul>
+            </div>
+            <div class="resource-category">
+                <h3>🎥 Webinars & Workshops</h3>
+                <ul>
+                    <li><a href="#">Upcoming: Career Transition Strategies</a></li>
+                    <li><a href="#">On-Demand: Resume Writing Masterclass</a></li>
+                    <li><a href="#">On-Demand: Personal Branding Workshop</a></li>
+                    <li><a href="#">View All Webinars</a></li>
+                </ul>
+            </div>
+            <div class="resource-category">
+                <h3>🔍 Career Explorer</h3>
+                <ul>
+                    <li><a href="#">Browse Careers by Industry</a></li>
+                    <li><a href="#">Salary Information Database</a></li>
+                    <li><a href="#">Education Requirements Guide</a></li>
+                    <li><a href="#">Career Growth Projections</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="community" class="testimonials">
+        <h2 class="section-title">Success Stories</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"CareerBloom helped me transition from engineering to UX design. The assessments were spot-on, and my counsellor provided invaluable guidance throughout my journey!"</p>
+                <p class="testimonial-author">- Sneha M., UX Designer</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"The AI chatbot with voice modification made me feel comfortable discussing my career anxieties anonymously. It was the perfect first step before booking a counsellor."</p>
+                <p class="testimonial-author">- Arjun P., Software Developer</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"I was confused about my career after graduation. The personality and interest tests gave me clarity, and now I'm pursuing my dream career in environmental science!"</p>
+                <p class="testimonial-author">- Kavya R., Environmental Scientist</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-button" onclick="toggleChat()">💬</button>
+        <div class="chatbot-window" id="chatWindow">
+            <div class="chatbot-header">
+                <h3>🌸 Lavender AI Assistant</h3>
+                <button class="close-chat" onclick="toggleChat()">×</button>
+            </div>
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="message bot">
+                    Hello! I'm Lavender AI, your career counselling assistant. 👋<br><br>
+                    I can help you with:<br>
+                    • Career assessments<br>
+                    • Booking counsellor sessions<br>
+                    • Exploring career options<br>
+                    • Answering your questions<br><br>
+                    You can type or use the 🎤 voice button for voice interaction with optional voice modification for privacy!<br><br>
+                    How can I assist you today?
+                </div>
+            </div>
+            <div class="chatbot-input-area">
+                <button class="voice-button" id="voiceBtn" onclick="toggleVoice()">🎤</button>
+                <input type="text" class="chatbot-input" id="chatInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+                <button class="send-button" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>CareerBloom Pathways is your trusted partner in career development, combining AI technology with expert human guidance.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#assessments">Assessments</a></li>
+                    <li><a href="#counsellors">Counsellors</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📧 info@careerbloom.com</p>
+                <p>📞 +91-XXXX-XXXXXX</p>
+                <p>📍 Mumbai, India</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p>🔗 LinkedIn | Twitter | Instagram | Facebook</p>
+            </div>
+        </div>
+        <p>&copy; 2025 CareerBloom Pathways. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let isVoiceActive = false;
+        let recognition;
+        
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            chatWindow.classList.toggle('active');
+        }
+        
+        function scrollToAssessments() {
+            document.getElementById('assessments').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (message) {
+                addMessage(message, 'user');
+                input.value = '';
+                
+                setTimeout(() => {
+                    const responses = [
+                        "That's a great question! Let me help you with that. Would you like to take a career assessment to get personalized recommendations?",
+                        "I understand your concern. Based on your interests, I'd recommend exploring our counsellor profiles. Would you like me to show you counsellors specializing in your field?",
+                        "Excellent! I can help you book a session. What type of session would you prefer - video, audio, or chat?",
+                        "I'd be happy to guide you through our career assessments. They typically take 15-20 minutes and provide detailed insights. Shall we begin?"
+                    ];
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    addMessage(randomResponse, 'bot');
+                }, 1000);
+            }
+        }
+        
+        function addMessage(text, sender) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            messageDiv.textContent = text;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+        
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+        
+        function toggleVoice() {
+            const voiceBtn = document.getElementById('voiceBtn');
+            isVoiceActive = !isVoiceActive;
+            
+            if (isVoiceActive) {
+                voiceBtn.classList.add('active');
+                startVoiceRecognition();
+            } else {
+                voiceBtn.classList.remove('active');
+                stopVoiceRecognition();
+            }
+        }
+        
+        function startVoiceRecognition() {
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                recognition = new SpeechRecognition();
+                recognition.continuous = true;
+                recognition.interimResults = true;
+                
+                recognition.onresult = (event) => {
+                    const transcript = Array.from(event.results)
+                        .map(result => result[0])
+                        .map(result => result.transcript)
+                        .join('');
+                    
+                    document.getElementById('chatInput').value = transcript;
+                };
+                
+                recognition.onerror = (event) => {
+                    console.error('Speech recognition error:', event.error);
+                    toggleVoice();
+                };
+                
+                recognition.start();
+                addMessage("🎤 Voice recognition active. Speak now... (Voice modification enabled for privacy)", 'bot');
+            } else {
+                addMessage("Sorry, voice recognition is not supported in your browser. Please type your message instead.", 'bot');
+                toggleVoice();
+            }
+        }
+        
+        function stopVoiceRecognition() {
+            if (recognition) {
+                recognition.stop();
+                addMessage("Voice recognition stopped. You can type or click the microphone again to continue.", 'bot');
+            }
+        }
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
